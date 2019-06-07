@@ -1,0 +1,64 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #333;
+	text-align: center;
+	color: white;
+}
+.loadAnimate{
+	width: 260px;
+	margin: 150px auto;
+	margin-bottom: 15px;
+}
+.item{
+	display: inline-block;
+	height: 100px;
+	width: 15px;
+	background: white;
+	margin-left: 5px;
+	border-radius: 5px 5px 0 0;
+	transform-origin: bottom;
+	animation: loading 1.5s ease-in-out infinite;
+}
+
+.item1{
+	animation-delay: 0.1s;
+}
+.item2{
+	animation-delay: 0.2s;
+}
+.item3{
+	animation-delay: 0.3s;
+}
+.item4{
+	animation-delay: 0.4s;
+}
+.item5{
+	animation-delay: 0.5s;
+}
+.item6{
+	animation-delay: 0.6s;
+}
+.item7{
+	animation-delay: 0.7s;
+}
+.item8{
+	animation-delay: 0.8s;
+}
+/*动画制作*/
+@keyframes loading{
+	0%{
+		transform: scaleY(0.1);
+		background: #89ff00;
+	}
+	50%{
+		transform: scaleY(1);
+		background: #00bcd4;
+	}
+	100%{
+		transform: scaleY(0.1);
+		background: transparent;
+	}
+}
