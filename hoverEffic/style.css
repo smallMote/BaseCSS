@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.warpaper {
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #262626;
+    justify-content: center;
+}
+button {
+    padding: 20px 50px;
+    flex: 1;
+    margin: 25px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 999px;
+    outline: none;
+    font-size: 24px;
+    white-space: nowrap;
+    color: white;
+    user-select: none;
+    background: transparent;
+    background-image: url('./img/bg.png');
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+    border: 6px solid #dddddd;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 15px white;
+    display: inline-block;
+}
+button:hover {
+    background-position: -500% 100%;
+}
+button:nth-child(1) {
+    filter: hue-rotate(20deg)
+}
+button:nth-child(2) {
+    filter: hue-rotate(40deg)
+}
+button:nth-child(3) {
+    filter: hue-rotate(60deg)
+}
+button:nth-child(4) {
+    filter: hue-rotate(80deg)
+}
+button:nth-child(5) {
+    filter: hue-rotate(100deg)
+}
+button:nth-child(6) {
+    filter: hue-rotate(120deg)
+}
+button:nth-child(7) {
+    filter: hue-rotate(140deg)
+}
+button:nth-child(8) {
+    filter: hue-rotate(160deg)
+}
