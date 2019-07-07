@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0c0c0c;
+}
+label {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+label .btn {
+  position: absolute;
+  background-color: #1b1b1b;
+  display: block;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.4s;
+  /* 核心代码1 */
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 1),
+              0 -2px 5px rgba(0, 0, 0, 1) inset,
+              0 2px 5px rgba(255, 255, 255, 0.5) inset,
+              0 0 0 2px #000,
+              0 0 0 5px #0c0c0c,
+              0 0 0 5.5px #080808;
+  border: 1px solid none;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+label .fa {
+  position: relative;
+  font-size: 120px;
+  color: #0c0c0c;
+  top: calc(50% - 60px);
+  left: calc(50% - 54px);
+  transition: 0.4s;
+}
+
+/* 核心代码2 */
+label input[type="checkbox"]:checked ~ .btn {
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 1),
+              0 -2px 5px rgba(0, 0, 0, 1) inset,
+              0 1px 5px rgba(255, 255, 255, 0.5) inset,
+              0 0 0 2px #000,
+              0 0 0 5px #0c0c0c,
+              0 0 15px 5.5px #00a1ff;
+}
+
+/* 核心代码3 */
+input[type="checkbox"]:checked ~ .fa {
+  color: #00ffe7;
+  text-shadow: 0 0 15px #00a1ff,
+               0 0 30px #00a1ff;
+}
