@@ -1,0 +1,67 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f0f;
+}
+
+.pic{
+  width: 600px;
+  height: 400px;
+  background: url(pic.jpg) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.pic::before{
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 40px;
+  background: url(pic.jpg) no-repeat;
+  background-size: cover;
+  filter: sepia(100%);
+  opacity: 0;
+}
+
+.pic:hover:before{
+  opacity: .7;
+  animation: glitch 1.5s infinite linear;
+}
+
+@keyframes glitch {
+  0%{
+    top: 0;
+    background-position: 12px 0;
+  }
+
+  20%{
+    top: 80px;
+    background-position: -10px -80px;
+  }
+
+  40%{
+    top: 160px;
+    background-position: 6px -160px;
+  }
+
+  60%{
+    top: 240px;
+    background-position: -6px -240px;
+  }
+
+  80%{
+    top: 320px;
+    background-position: 10px -320px;
+  }
+
+  100%{
+    top: 400px;
+    background-position: -12px -400px;
+  }
+}
