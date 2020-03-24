@@ -1,0 +1,54 @@
+li {
+  background: slateblue;
+  list-style-type: none;
+  color: #fff;
+  word-wrap: break-word;
+}
+
+/* 
+  使用float、负margin-bottom和正padding-bottom对冲实现
+*/
+ul.float-owe-m--p {
+  --width: 200px;
+  margin: 20px auto;
+  overflow: hidden;
+  width: calc(var(--width) * 3 + 40px);
+}
+.float-owe-m--p li {
+  float: left;
+  margin: 0 10px -9999px 0;
+  padding-bottom: 9999px;
+  width: var(--width);
+}
+.float-owe-m--p  li:last-child {
+  margin-right: 0;
+}
+
+/* 使用table布局，table元素中的table-cell元素默认就是等高的 */
+ul.table {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+.table li {
+  width: 200px;
+  display: table-cell;
+  margin-right: 10px;
+  border-left: solid 5px currentColor;
+  border-right: solid 5px currentColor;
+}
+/* flex */
+ul.flex {
+  display: flex;
+}
+.flex li {
+  flex: 1;
+  border-left: solid 5px currentColor;
+  border-right: solid 5px currentColor;
+}
+/* grid */
+ul.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+}
