@@ -1,0 +1,110 @@
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+  --bg-color: #0A2B3C;
+  --primary-color: #1F9CFF;
+  --shadow: -1px -1px 2px rgba(255, 255, 255, .25),
+            2px 2px 5px rgba(255, 255, 255, .25) inset,
+            8px 30px 30px rgba(0, 0, 0, .4),
+            -2px -2px 5px rgba(0, 0, 0, .3) inset;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
+
+.container h2 {
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.container:hover .rating-group {
+  filter: blur(5px);
+  opacity: .2;
+}
+
+.container .rating-group:hover {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.rating-group {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px;
+  line-height: 40px;
+  box-shadow: var(--shadow);
+  transition: .4s ease;
+}
+
+.rating-group h3 {
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+.rating {
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.rating input {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.rating input::before {
+  content: '\f005';
+  font-family: fontAwesome;
+  font-size: 34px;
+  position: absolute;
+  left: 4px;
+  transition: .4s ease;
+}
+
+.rating input:nth-child(2n-1)::before {
+  left: initial;
+  right: 4px;
+}
+
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before {
+  color: var(--primary-color);
+}
